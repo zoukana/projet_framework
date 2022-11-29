@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*  Route::get('/connecxion', function () {
+    return view('connecxion');
+}); */ 
+
+ Route::get('/connecxion', 'ConnecxionController@formulaire');
+Route::post('/connecxion', 'ConnecxionController@traitement');
