@@ -36,6 +36,11 @@ return [
 
     'connections' => [
 
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('DB_DSN'),
+            'database' => env('DB_DATABASE', 'homestead'),
+        ],
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -44,11 +49,6 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
-        'mongodb' => [
-            'driver' => 'mongodb',
-            'dsn' => env('DB_URI', 'mongodb+srv://username:password@<atlas-cluster-uri>/myappdb?retryWrites=true&w=majority'),
-            'database' => 'framework',
-    ],
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
