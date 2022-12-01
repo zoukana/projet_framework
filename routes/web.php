@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::post("/inscription", [postcontroller::class,'inscription']);
 
-/*  Route::post("/inscription", [postcontroller::class,'ajouteruser']);
- */ 
+/* Route::post("/inscription", [postcontroller::class,'ajouteruser']);
+ */
