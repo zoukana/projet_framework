@@ -22,6 +22,11 @@ Route::get('/post', function () {
 });
 
 
+Route::get('/', function () {
+    return view('connexion');
+});
+
+
 Route::get("/connexion",[postcontroller::class,"inscription"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
 
