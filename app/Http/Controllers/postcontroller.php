@@ -54,6 +54,10 @@ class postcontroller extends Controller
 
 
     }
-
+/*   public function _construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+    protected function redirectTo() */
 
 }
