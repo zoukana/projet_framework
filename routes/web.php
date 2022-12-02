@@ -17,7 +17,13 @@ Route::get('/', function () {
     return view('inscription');
 });
 
+
+/*  Route::get('/connecxion', function () {
+    return view('connecxion');
+}); */ 
+
+ Route::get('/connecxion', 'ConnecxionController@formulaire');
+Route::post('/connecxion', 'ConnecxionController@traitement');
 Route::post("/inscription", [postcontroller::class,'inscription']);
 
-/* Route::post("/inscription", [postcontroller::class,'ajouteruser']);
- */
+
