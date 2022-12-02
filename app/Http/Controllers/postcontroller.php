@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\assane;
 use Illuminate\Http\Request;
+use Illuminate\Support\Fascades\Auth;
 
 class postcontroller extends Controller
 {
+    
     //controle du formulaire
 
     public function inscription(Request $request){
@@ -37,9 +39,12 @@ class postcontroller extends Controller
         $res->date_archivage=null;
         $res->save();
       return $validation;
-
-
     }
 
-
+  /*   public function _construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+    protected function redirectTo() */
 }
+
