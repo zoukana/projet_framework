@@ -23,34 +23,34 @@ class postcontroller extends Controller
         $validation = $request->validate([
             'nom' => ['required'],
             'prenom' => ['required'],
-            'email' => ['required','email'],
+            'email' => 'required |regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix',
             'role'=>['required'],
             'password'=>['required'],
 
         ]);
-        foreach ($u::all() as $user) {
-          /*   dd($email); */
-            if($user->email === $email){
-
-                return ('email existant');
-            }else{
-
-                $res = new assane();
-
-                $res->$prenom;
-                $res->$nom;
-                $res->$email;
-                $res->$password=bcrypt($password);
-                $res->$role;
-                $res->date_inscription=date('y-m-d');
-                $res->date_modification=null;
-                $res->date_archivage=null;
-                $res->save();
+     foreach ($u::all() as $user) {
+        /*   dd($email); */
+           if($user->email === $email){
+           return'email existant';
             }
-        }
+     }
 
 
-      return $validation;
+            $res = new assane();
+
+            $res->prenom=$request->get('prenom');
+            $res->nom=$request->get('nom');
+            $res->email=$request->get('email');
+            $res->password=$request->get('password');
+            $res->role=$request->get('role');
+            $res->date_inscription=date('y-m-d');
+            $res->date_modification=null;
+            $res->date_archivage=null;
+            $res->save();
+/*             dd($res->save());
+ *//*             dd($res->save());
+ */
+        return $validation;
 
 
     }

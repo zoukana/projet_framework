@@ -14,22 +14,16 @@ use App\Http\Controllers\postcontroller;
 */
 
 Route::get('/', function () {
+    return view('connexion');
+});
+
+Route::get('/post', function () {
     return view('inscription');
 });
 
 
-Route::get('/admin', function () {
-    return view('admin');
-});
-
-
-/*  Route::get('/connecxion', function () {
-    return view('connecxion');
-}); */
-
- Route::get('/connecxion', 'ConnecxionController@formulaire');
-Route::post('/connecxion', 'ConnecxionController@traitement');
-Route::post("/inscription", [postcontroller::class,'inscription']);
+Route::get("/connexion",[postcontroller::class,"inscription"]);
+Route::post("/inscription",[postcontroller::class,"inscription"]);
 
 
 
