@@ -32,4 +32,15 @@ Route::post('/connecxion', 'ConnecxionController@traitement');
 Route::post("/inscription", [postcontroller::class,'inscription']);
 
 
+Route::get('/', function () {
+    return view('inscription');
+});
+
+
+Route::get('/', function () {
+    return view('connexion');
+});
+
+
+Route::get("/connexion",[postscontroller::class,"connexion"]);
 
