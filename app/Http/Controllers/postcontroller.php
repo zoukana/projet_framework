@@ -10,6 +10,9 @@ class postcontroller extends Controller
     //controle du formulaire
 
     public function inscription(Request $request){
+        $u = new assane();
+     /*    dd($u::all()); */
+
         $nom = $request->get('nom');
         $prenom = $request->get('prenom');
         $email = $request->get('email');
@@ -23,19 +26,30 @@ class postcontroller extends Controller
             'email' => ['required','email'],
             'role'=>['required'],
             'password'=>['required'],
+
         ]);
+        foreach ($u::all() as $user) {
+          /*   dd($email); */
+            if($user->email === $email){
 
-        $res = new assane();
+                return ('email existant');
+            }else{
 
-        $res->$prenom;
-        $res->$nom;
-        $res->$email;
-        $res->$password=bcrypt($password);
-        $res->$role;
-        $res->date_inscription=date('y-m-d');
-        $res->date_modification=null;
-        $res->date_archivage=null;
-        $res->save();
+                $res = new assane();
+
+                $res->$prenom;
+                $res->$nom;
+                $res->$email;
+                $res->$password=bcrypt($password);
+                $res->$role;
+                $res->date_inscription=date('y-m-d');
+                $res->date_modification=null;
+                $res->date_archivage=null;
+                $res->save();
+            }
+        }
+
+
       return $validation;
 
 
