@@ -5,8 +5,7 @@
         @csrf
         <div>
             <h2 class="d-flex justify-content-center mt-5">FORMULAIRE DE CONNECTION</h2>
-        </div> 
-        
+        </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">EMAIL</label>
             <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" name="email" id="email" placeholder="email">
@@ -30,4 +29,3 @@
 
 </div>
 @endsection
-
