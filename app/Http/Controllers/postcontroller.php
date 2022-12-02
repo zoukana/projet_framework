@@ -20,7 +20,7 @@ class postcontroller extends Controller
         $validation = $request->validate([
             'nom' => ['required'],
             'prenom' => ['required'],
-            'email' => ['required','email'],
+            'email' => 'required|regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix',
             'role'=>['required'],
             'password'=>['required'],
         ]);

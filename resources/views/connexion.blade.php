@@ -1,15 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
-<body>
+@extends('layouts.commun')
+@section('content')
     <div class="container " style="border: 1px solid black; display:flex;justify-content:center;margin-top:200px; border-radius:10px;background-color:#D9D9D9">
     <form action="/connexion" methode="POST" class="container" >
         @csrf
@@ -34,11 +24,10 @@
         <div class="mb-4">
 
             <input type="submit" name="submit" class="btn btn-primary ">
-            <a href="inscription"><span style="margin-left: 30px;color:black">s'inscrire?</span></a>
+            <a href="/inscription"><span style="margin-left: 30px;color:black">s'inscrire?</span></a>
         </div>
     </form>
 
 </div>
-</body>
-</html>
+@endsection
 
