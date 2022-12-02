@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+
 /*  Route::get('/connecxion', function () {
     return view('connecxion');
 }); */ 
@@ -25,5 +30,6 @@ Route::get('/', function () {
  Route::get('/connecxion', 'ConnecxionController@formulaire');
 Route::post('/connecxion', 'ConnecxionController@traitement');
 Route::post("/inscription", [postcontroller::class,'inscription']);
+
 
 
