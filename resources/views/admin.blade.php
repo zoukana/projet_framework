@@ -76,57 +76,44 @@
                     <tbody class="text-center">
                         <tr>
 
-
-                            <tr>
-
-
-                                 <tr  scope="row">
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-
+                            @foreach ($user as $user->id )
+                            <tr  scope="row">
+                                <td class="border border-4 border-dark">{$assane->nom}</td>
+                                <td class="border border-4 border-dark">{$assane->prenom}</td>
+                                <td class="border border-4 border-dark">{$assane->email}</td>
+                                <td class="border border-4 border-dark">{$assane->role}</td>
+                                <td class="border border-4 border-dark">{$assane->nom}</td>
                                 <td class= "border border-4 border-dark">
-
                                     <span style="display:flex; justify-content:space-between;font-size:30px;">
-                                  <a title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $data['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
+                                  <a  title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $data['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
                                     <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href="traitement_archive.php?matricule=' . $data['matricule'] . '"><i class="bi bi-archive-fill text-dark"></i></a>
                                     <a href="changer.php?matricule=' . $data['matricule'] . '"><i class="bi bi-arrow-repeat text-dark"></i></a>
                                     </span>
-
                                     </td>
-
-
 
                                 </tr>
 
                                  <tr>
-
-
                                          <tr  scope="row">
                                         <td class="border border-4 border-dark"></td>
                                         <td class="border border-4 border-dark"></td>
                                         <td class="border border-4 border-dark"></td>
                                         <td class="border border-4 border-dark"></td>
                                         <td class="border border-4 border-dark"></td>
-
                                         <td class= "border border-4 border-dark">
-
                                             <span style="display:flex; justify-content:space-between;font-size:30px;">
-                                          <a onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $a['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
+                                          <a onclick= "return confirm(\'voulez vous vraiment ?\')" href="modifier.php?matricule=' . $a['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
                                             <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href="traitement_archive.php?matricule=' . $a['matricule'] . '"><i class="bi bi-archive-fill text-dark"></i></a>
                                             <a href="changer.php?matricule=' . $a['matricule'] . '"><i class="bi bi-arrow-repeat text-dark"></i></a>
                                             </span>
-
                                             </td>
-
-
-
                                         </tr>
 
 
                         </tr>
+                            @endforeach
+
+
 
                     </tbody>
                 </table>

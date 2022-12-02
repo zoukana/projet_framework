@@ -26,4 +26,5 @@ class assane extends Model
         'date_archivage',
         'date_modification',
     ];
+
 }

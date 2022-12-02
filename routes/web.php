@@ -25,11 +25,13 @@ Route::get('/admin', function () {
 
 /*  Route::get('/connecxion', function () {
     return view('connecxion');
-}); */ 
+}); */
 
  Route::get('/connecxion', 'ConnecxionController@formulaire');
 Route::post('/connecxion', 'ConnecxionController@traitement');
 Route::post("/inscription", [postcontroller::class,'inscription']);
+
+
 
 
 
