@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\assane;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class postcontroller extends Controller
 {
     //controle du formulaire
@@ -27,11 +27,11 @@ class postcontroller extends Controller
 
         $res = new assane();
 
-        $res->prenom=$request->get('prenom');
-        $res->nom=$request->get('nom');
-        $res->email=$request->get('email');
-        $res->password=$request->get('password');
-        $res->role=$request->get('role');
+        $res->$prenom;
+        $res->$nom;
+        $res->$email;
+        $res->$password=bcrypt($password);
+        $res->$role;
         $res->date_inscription=date('y-m-d');
         $res->date_modification=null;
         $res->date_archivage=null;

@@ -15,6 +15,7 @@
       @error('prenom')
       <div class="text-danger">{{ $message }}</div>
     @enderror
+
     </div>
 
     <div class="col-md-6">
