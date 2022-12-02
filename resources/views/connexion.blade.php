@@ -23,7 +23,7 @@
         <div class="mb-4">
 
             <input type="submit" name="submit" class="btn btn-primary ">
-            <a href="/inscription"><span style="margin-left: 30px;color:black">s'inscrire?</span></a>
+            <a href="/post"><span style="margin-left: 30px;color:black">s'inscrire?</span></a>
         </div>
     </form>
 

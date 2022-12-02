@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('connexion');
 });
 
-Route::get('/inscription', function () {
+Route::get('/post', function () {
     return view('inscription');
 });
 
