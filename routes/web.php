@@ -13,13 +13,11 @@ use App\Http\Controllers\postcontroller;
 |
 */
 
+
+
+
 Route::get('/', function () {
-    return view('inscription');
-});
-
-
-Route::get('/admin', function () {
-    return view('admin');
+    return view('connexion');
 });
 
 
@@ -27,10 +25,16 @@ Route::get('/admin', function () {
     return view('connecxion');
 }); */
 
- Route::get('/connecxion', 'ConnecxionController@formulaire');
-Route::post('/connecxion', 'ConnecxionController@traitement');
-Route::post("/inscription", [postcontroller::class,'inscription']);
+Route::get('/inscription', function () {
+    return view('inscription');
+});
 
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get("/connexion",[postcontroller::class,"inscription"]);
+Route::post("/inscription",[postcontroller::class,"inscription"]);
 
 
 

@@ -78,11 +78,11 @@
 
                             @foreach ($user as $user->id )
                             <tr  scope="row">
-                                <td class="border border-4 border-dark">{$assane->nom}</td>
-                                <td class="border border-4 border-dark">{$assane->prenom}</td>
-                                <td class="border border-4 border-dark">{$assane->email}</td>
-                                <td class="border border-4 border-dark">{$assane->role}</td>
-                                <td class="border border-4 border-dark">{$assane->nom}</td>
+                                <td class="border border-4 border-dark">{$user->nom}</td>
+                                <td class="border border-4 border-dark">{$user->prenom}</td>
+                                <td class="border border-4 border-dark">{$user->email}</td>
+                                <td class="border border-4 border-dark">{$user->role}</td>
+                                <td class="border border-4 border-dark">{$user->nom}</td>
                                 <td class= "border border-4 border-dark">
                                     <span style="display:flex; justify-content:space-between;font-size:30px;">
                                   <a  title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $data['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
@@ -109,10 +109,8 @@
                                             </td>
                                         </tr>
 
-
                         </tr>
-                            @endforeach
-
+                        @endforeach
 
 
                     </tbody>
