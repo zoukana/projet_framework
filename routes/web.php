@@ -31,6 +31,21 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+
+/*  Route::get('/connecxion', function () {
+    return view('connecxion');
+}); */
+
+Route::get('/inscription', function () {
+    return view('inscription');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+
+
 Route::get("/connexion",[postcontroller::class,"inscription"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
 

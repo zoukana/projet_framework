@@ -73,5 +73,6 @@ class postcontroller extends Controller
     }
     protected function redirectTo() */
 
+    
 }
 

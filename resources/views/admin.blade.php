@@ -68,65 +68,40 @@
                             <th scope="col" class="border border-4 border-dark">Nom</th>
                             <th scope="col" class="border border-4 border-dark">Prenom</th>
                             <th scope="col" class="border border-4 border-dark">Email</th>
-                            <th scope="col" class="border border-4 border-dark">Matricule</th>
                             <th scope="col" class="border border-4 border-dark">Role</th>
                             <th scope="col" class="border border-4 border-dark">Action</th>
                         </tr>
                     </thead>
                     <tbody class="text-center">
+                        @foreach ( $user as $user )
                         <tr>
 
 
-                            <tr>
-
-
-                                 <tr  scope="row">
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
-                                <td class="border border-4 border-dark"></td>
+                            <tr  scope="row">
+                                <td class="border border-4 border-dark">{{{$user->nom}}}</td>
+                                <td class="border border-4 border-dark">{{{$user->prenom}}}</td>
+                                <td class="border border-4 border-dark">{{{$user->email}}}</td>
+                                <td class="border border-4 border-dark">{{{$user->role}}}</td>
 
                                 <td class= "border border-4 border-dark">
-
                                     <span style="display:flex; justify-content:space-between;font-size:30px;">
-                                  <a title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $data['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
-                                    <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href="traitement_archive.php?matricule=' . $data['matricule'] . '"><i class="bi bi-archive-fill text-dark"></i></a>
-                                    <a href="changer.php?matricule=' . $data['matricule'] . '"><i class="bi bi-arrow-repeat text-dark"></i></a>
+                                  <a  title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="/api/post/edit/{{$user->id}}"><i class="bi bi-pencil-square text-dark "></i></a>
+                                    <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href=""><i class="bi bi-archive-fill text-dark"></i></a>
+                                    <a href=""></a>
                                     </span>
 
+                                    <form action="/api/post/switchRole/{{$user->id}}" method="post">
+                                        <button type="submit"><i class="bi bi-arrow-repeat text-dark"></i></button>
+                                    </form>
                                     </td>
-
-
 
                                 </tr>
 
-                                 <tr>
-
-
-                                         <tr  scope="row">
-                                        <td class="border border-4 border-dark"></td>
-                                        <td class="border border-4 border-dark"></td>
-                                        <td class="border border-4 border-dark"></td>
-                                        <td class="border border-4 border-dark"></td>
-                                        <td class="border border-4 border-dark"></td>
-
-                                        <td class= "border border-4 border-dark">
-
-                                            <span style="display:flex; justify-content:space-between;font-size:30px;">
-                                          <a onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="modifier.php?matricule=' . $a['matricule'] . '"><i class="bi bi-pencil-square text-dark "></i></a>
-                                            <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href="traitement_archive.php?matricule=' . $a['matricule'] . '"><i class="bi bi-archive-fill text-dark"></i></a>
-                                            <a href="changer.php?matricule=' . $a['matricule'] . '"><i class="bi bi-arrow-repeat text-dark"></i></a>
-                                            </span>
-
-                                            </td>
-
-
-
-                                        </tr>
-
 
                         </tr>
+
+
+                        @endforeach
 
                     </tbody>
                 </table>
