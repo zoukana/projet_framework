@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postcontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,12 @@ Route::get('/admin', function () {
 
 Route::get("/connexion",[postcontroller::class,"inscription"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
+
+
+
+
+Route::get('/admin', 'postController@index')->name('admin')->middleware('admin');
+Route::get('/user', 'postController@index')->name('user')->middleware('user');
 
 
 
