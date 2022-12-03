@@ -24,7 +24,7 @@ class postcontroller extends Controller
         $validation = $request->validate([
             'nom' => ['required'],
             'prenom' => ['required'],
-            'email' => 'required |regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix', 
+            'email' => 'required |regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix',
             'role'=>['required'],
             'password'=>['required'],
             'password_confirmation' => 'required_with:password|same:password',
@@ -43,7 +43,7 @@ class postcontroller extends Controller
             ]);
             }
      }
-    
+
 
 
             $res = new assane();
@@ -72,5 +72,6 @@ class postcontroller extends Controller
         $this->middleware('guest')->except('logout');
     }
     protected function redirectTo() */
+
 }
 
