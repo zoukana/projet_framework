@@ -18,7 +18,7 @@ class postcontroller extends Controller
         $email = $request->get('email');
         $password= $request->get('password');
         $role=$request->get('role');
-        $password_confirmation=$request->get('password1');
+        $password_confirmation=$request->get('password_confirmation');
 
         $validation = $request->validate([
             'nom' => ['required'],
@@ -26,12 +26,20 @@ class postcontroller extends Controller
             'email' => 'required |regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix',
             'role'=>['required'],
             'password'=>['required'],
+            'password_confirmation' => 'required_with:password|same:password',
+
 
         ]);
+        //controle du mail existant
      foreach ($u::all() as $user) {
-        /*   dd($email); */
+
            if($user->email === $email){
-           return'email existant';
+
+            $validation = $request->validate([
+
+                'email'=>['confirmed'],
+
+            ]);
             }
      }
 
@@ -46,7 +54,8 @@ class postcontroller extends Controller
             $res->date_inscription=date('y-m-d');
             $res->date_modification=null;
             $res->date_archivage=null;
-            $res->save();
+            $res->photo=$request->get('photo');
+             $res->save();
 /*             dd($res->save());
  *//*             dd($res->save());
  */
