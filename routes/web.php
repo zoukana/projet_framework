@@ -13,12 +13,19 @@ use App\Http\Controllers\postcontroller;
 |
 */
 
+Route::get('/', function () {
+    return view('connexion');
+});
 
+Route::get('/inscription', function () {
+    return view('inscription');
+});
 
 
 Route::get('/', function () {
     return view('connexion');
 });
+
 
 
 /*  Route::get('/connecxion', function () {
@@ -33,9 +40,10 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+
+
 Route::get("/connexion",[postcontroller::class,"inscription"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
-
 
 
 
