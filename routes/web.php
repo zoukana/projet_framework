@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postcontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,14 @@ Route::post("/inscription",[postcontroller::class,"inscription"]);
 
 
 
+
+
+Route::get('/admin', 'postController@index')->name('admin')->middleware('admin');
+Route::get('/user', 'postController@index')->name('user')->middleware('user');
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes:insertion image
@@ -57,3 +66,4 @@ Route::post('/store-image',[ImageUploadController::class,'storeImage'])
 
 //For showing an image
 Route::get('/view_image',[ImageUploadController::class,'viewImage'])->name('images.view');
+
