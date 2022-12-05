@@ -8,12 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
-    'App\\Http\\Controllers\\ConnecxionController' => $baseDir . '/app/Http/Controllers/ConnecxionController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-<<<<<<< HEAD
     'App\\Http\\Controllers\\api\\PostController' => $baseDir . '/app/Http/Controllers/api/PostController.php',
-=======
->>>>>>> 9e6c6f53cd1e0b2745a3c6c57ef687556c646701
     'App\\Http\\Controllers\\postcontroller' => $baseDir . '/app/Http/Controllers/postcontroller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -25,14 +21,12 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\ValidateSignature' => $baseDir . '/app/Http/Middleware/ValidateSignature.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-<<<<<<< HEAD
+    'App\\Http\\Middleware\\admin' => $baseDir . '/app/Http/Middleware/admin.php',
+    'App\\Http\\Middleware\\user' => $baseDir . '/app/Http/Middleware/user.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
-=======
-    'App\\Models\\Postimage' => $baseDir . '/app/Models/Postimage.php',
->>>>>>> 9e6c6f53cd1e0b2745a3c6c57ef687556c646701
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\assane' => $baseDir . '/app/Models/assane.php',
-    'App\\Models\\connexion' => $baseDir . '/app/M
+    'App\\Models\\connexion' => $baseDir . '/app/Models/connexion.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
