@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\assane;
 use Illuminate\Http\Request;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class postcontroller extends Controller
 {
+    public function index()
+    {
+        return view('/connexion');
+    } 
+    
+    
     
     //controle du formulaire
 
@@ -62,8 +74,28 @@ class postcontroller extends Controller
  */
         return $validation;
 
-
     }
+    
+protected function connexion(Request $request){
+    $u = new assane();
+    $u = $request->validate([
+        'password' => ['required'],
+        'email' => 'required |regex:/^([a-z0-9+-]+)(.[a-z0-9+-]+)*@([a-z0-9-]+.)+[a-z]{2,6}$/ix',
+       
+
+
+    ]);
+   $users = assane::all();
+   foreach($users as $user) {
+    if ($user->email == $request->get("email") && $user->password == $request->get("password")){
+        return redirect('/admin');
+    }
+   }
+
+   return redirect('/');
+
+   //dd($user);
+} 
    /*  $request->session()->flash('enregistrement valide')
     return to_route('post.create'); */
 /*   public function _construct()
@@ -73,5 +105,46 @@ class postcontroller extends Controller
     }
     protected function redirectTo() */
 
+
+
+
+  
+
 }
 
+/* class postcontroller extends Controller
+{
+    public function index()
+    {
+        return view('/connexion');
+    }  
+      
+    public function inscription(Request $request)
+    {
+       
+   
+        $validation = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('/admin')
+                        ->withSuccess('Signed in');
+        }
+  
+        return redirect("/connexion")->withSuccess('connexion details are not valid');
+    }    
+    
+    public function dashboard()
+    {
+        if(Auth::check()){
+            return view('/user');
+        }
+  
+        return redirect("/user")->withSuccess('You are not allowed to access');
+    }
+    
+    public function signOut() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('/connexion');
+    }
+ } */

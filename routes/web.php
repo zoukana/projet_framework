@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Routing\Support\Facades\groupe;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postcontroller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,18 +34,37 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get("/connexion",[postcontroller::class,"inscription"]);
+Route::post("/connexion",[postcontroller::class,"connexion"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
 
 
+/* Route::get('/admin', 'postController@index')->name('admin')->middleware('admin');
+Route::get('/user', 'postController@index')->name('user')->middleware('user');  */
+/* 
+ Route::middleware(['auth','roles:admin'])->group(function(){
+    Route::get('/', function () {
+        // ...
+    });
+
+}) ;  */ 
+/*  Route::get('/private',function(){
+    return 'welcome';
+});  */
+   
+
+/* 
+Route::get('/user', [postcontroller::class, '/user']); 
 
 
-
-Route::get('/admin', 'postController@index')->name('admin')->middleware('admin');
-Route::get('/user', 'postController@index')->name('user')->middleware('user');
-
+Route::get('/admin', [postcontroller::class, '/admin']);
+Route::get('signout', [postontroller::class, 'signOut'])->name('signout'); */
 
 
+/*  Route::middleware(['auth', 'auth.session'])->group(function () {
+    Route::get('/', function () {
+        // ...
+    });
+}); */ 
 
 /*
 |--------------------------------------------------------------------------
@@ -57,13 +79,5 @@ Route::get('/user', 'postController@index')->name('user')->middleware('user');
 
 
 
-//For adding an image
-Route::get('/add_image',[ImageUploadController::class,'addImage'])->name('images.add');
 
-//For storing an image
-Route::post('/store-image',[ImageUploadController::class,'storeImage'])
-->name('images.store');
-
-//For showing an image
-Route::get('/view_image',[ImageUploadController::class,'viewImage'])->name('images.view');
 

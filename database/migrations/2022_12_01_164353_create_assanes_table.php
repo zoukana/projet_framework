@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('assanes', function (Blueprint $table) {
             $table->id();
+            $table->string('role');
             $table->timestamps();
+           
         });
     }
 

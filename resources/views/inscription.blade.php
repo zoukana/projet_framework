@@ -64,7 +64,7 @@
     </div>
     <br>
     <div class="col-6">
-      <input type="submit" id="submit" name="submit"  class="btn btn-primary" style="background-color:#05006B">
+      <input type="submit" id="submit" name="submit"  class="btn btn-primary" >
     </div>
   </form>
 

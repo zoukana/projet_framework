@@ -28,7 +28,7 @@
         </span></a>
     <div class="container border-danger bg-white pt-1">
         <div class="container admin col-lg-12 mt-5">
-            <div class="row text-white btn-lg text-center mt-2" style="background-color:RGB(51, 21, 15)">
+            <div class="row text-white btn-lg text-center mt-2  bg-primary " >
                 <span class="d-flex justify-content-center">
                     <!-- pour l'affichage sur le profil -->
                     <span class="col-1 ">
@@ -62,8 +62,7 @@
 
             <div class="row">
                 <table class="table table-striped table-bordered border border-4 border-dark">
-                    <thead class="text-white btn-lg text-center border border-4 border-dark"
-                        style="background-color:rgba(174, 115, 74, 1)">
+                    <thead class="text-white btn-lg text-center border border-4 border-dark  "style="background-color: #0d6efd">
                         <tr class="border border-4 border-dark">
                             <th scope="col" class="border border-4 border-dark">Nom</th>
                             <th scope="col" class="border border-4 border-dark">Prenom</th>
