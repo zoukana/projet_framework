@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('post/switchRole/{id}', [PostController::class, "switchRole"]);
+Route::get('post/editForm/{id}', [PostController::class, "editForm"]);
+Route::post('post/edit/{id}', [PostController::class, "edit"]);

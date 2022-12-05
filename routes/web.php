@@ -45,5 +45,7 @@ Route::get('/admin', function () {
 Route::get("/connexion",[postcontroller::class,"inscription"]);
 Route::post("/inscription",[postcontroller::class,"inscription"]);
 
-
+Route::get('/modification', function () {
+    return view('modification');
+});
 
