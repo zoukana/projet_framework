@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/bootstrap/dist/js/bootstrap.js">
     <link rel="stylesheet" href="/bootstrap/scss/bootstrap.scss">
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -43,11 +44,11 @@
                     </span>
 
                     <div class="ml-auto  mt-3 " style="margin-left:auto;max-height: 2.5rem;">
-                        <form class="d-flex" action="/search" method="Get" role="search">
-                            {{ csrf_field() }}
-                            <input class="form-control me-2" name="search" type="text" placeholder="Rechercher..."
+                        <form class="d-flex" action="chercheUser" method="POST" role="search">
+
+                            <input class="form-control me-2" name="prenom" type="text" placeholder="Rechercher..."
                                 aria-label="Search">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                            <button class="btn btn-outline-secondary" type="submit">Recherche</button>
                         </form>
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -90,8 +91,9 @@
                                     <a href=""></a>
                                     </span>
 
-                                    <form action="/api/post/switchRole/{{$user->id}}" method="post">
-                                        <button type="submit"><i class="bi bi-arrow-repeat text-dark"></i></button>
+                                    <form class="d-flex mr-3" action="/api/post/switchRole/{{$user->id}}" method="post">
+                                        <div class="form-group"><button type="submit"><i class="bi bi-arrow-repeat text-dark"></i></button></div>
+
                                     </form>
                                     </td>
 
@@ -105,11 +107,11 @@
 
                     </tbody>
                 </table>
-                 <div class="d-flex justify-content-center">
-                    {{ $users->links() }}
-                </div>
-            </div>
 
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ $users->links() }}
+            </div>
         </div>
 </body>
 

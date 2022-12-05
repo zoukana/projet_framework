@@ -43,6 +43,7 @@ class postcontroller extends Controller
             $res->email=$request->get('email');
             $res->password=$request->get('password');
             $res->role=$request->get('role');
+            $res->etat=1;
             $res->date_inscription=date('y-m-d');
             $res->date_modification=null;
             $res->date_archivage=null;
@@ -56,5 +57,5 @@ class postcontroller extends Controller
     }
 
 
-    
+
 }
