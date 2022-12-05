@@ -11,7 +11,7 @@
     <div>
     </div>
     <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">Prenom (*)</label>
+      <label for="inputEmail4" class="form-label">PRENOM</label>
       <input type="text" class="form-control @error('prenom') is-invalid @enderror" value="{{ old('prenom') }}" id="prenom" name="prenom" placeholder="PRENOM">
       @error('prenom')
       <div class="text-danger">{{ $message }}</div>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Nom (*)</label>
+      <label for="inputPassword4" class="form-label">NOM</label>
       <input type="text" class="form-control @error('nom') is-invalid @enderror" value="{{ old('nom') }}" id="nom" name="nom" placeholder="NOM">
       @error('nom')
       <div class="text-danger">{{ $message }}</div>
@@ -28,18 +28,18 @@
 
     </div>
     <div class="col-6">
-      <label for="inputAddress" class="form-label">Email (*)</label>
+      <label for="inputAddress" class="form-label">EMAIL</label>
       <input type="text" autocomplete="off" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" placeholder="Email" name="email">
       @error('email')
       <div class="text-danger">{{ $message }}</div>
     @enderror
     </div>
     <div class="col-md-6">
-      <label for="inputState" class="form-label">role (*)</label>
+      <label for="inputState" class="form-label">role</label>
       <select id="role" name="role" class="form-select @error('nom') is-invalid @enderror">
-        <option value="" selected></option>
-        <option value="admin" name="role">administrateur</option>
-        <option value="user" name="role">user_simple</option>
+        <option   selected></option>
+        <option     name="role">administrateur</option>
+        <option  name="role">user_simple</option>
       </select>
       @error('role')
       <div class="text-danger">{{ $message }}</div>
@@ -54,8 +54,10 @@
     </div>
     <div class="col-6">
       <label for="inputAddress2" class="form-label">saisir a nouveau le mot de passe* </label>
-      <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="mot_de_passe">
-
+      <input type="password"  name="password_confirmation"  class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" placeholder="mot_de_passe">
+      @error('password_confirmation')
+      <div class="text-danger">{{ $message }}</div>
+    @enderror
     </div>
     <div class="col-auto">
       <input type="file" class="form-control" id="photo" name="photo" placeholder="PHOTO" accept=".jpeg, .png, .jpj">
