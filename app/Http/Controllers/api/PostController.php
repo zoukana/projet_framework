@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\assane;
+use PhpParser\Node\Expr\Cast\String_;
+
 class PostController extends Controller
 {
     /**
@@ -15,10 +17,22 @@ class PostController extends Controller
      */
     public function index()
     {
-        $user = assane::all();
+        //$user = assane::all();
+
         /*return response ()->json($user);*/
-        return view('admin',['user' => $user]);
+        $users = assane::paginate(3);
+        //dd($user->links());
+       return view('admin',['users' => $users]);
+        //return view('admin',['user' => $user]);
     }
+
+    // app > http > controllers > EmployeeController.php
+
+    public function getData(){
+      //$user = assane::paginate(3);
+      //return view('admin',compact(['user' => $user]));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -72,11 +86,22 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(string $id , Request $request)
     {
-        
+
+        $user = assane::findOrFail($id);
+        $user->nom=$request->get("nom");
+        $user->nom=$request->get("nom");
+        $user->nom=$request->get("nom");
+        $user->save();
+        return redirect("/api/post");
     }
 
+    public function editForm(string $id)
+    {
+        $user = assane::findOrFail($id);
+        return view("modification", [ "user" => $user]);
+    }
     /**
      * Update the specified resource in storage.
      *

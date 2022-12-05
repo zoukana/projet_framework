@@ -73,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        @foreach ( $user as $user )
+                        @foreach ( $users as $user )
                         <tr>
 
 
@@ -85,7 +85,7 @@
 
                                 <td class= "border border-4 border-dark">
                                     <span style="display:flex; justify-content:space-between;font-size:30px;">
-                                  <a  title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="/api/post/edit/{{$user->id}}"><i class="bi bi-pencil-square text-dark "></i></a>
+                                  <a  title="modifer" onclick= "return confirm(\'voulez vous vraiment modifier?\')" href="post/editForm/{{$user->id}}"><i class="bi bi-pencil-square text-dark "></i></a>
                                     <a onclick= "return confirm(\'voulez vous vraiment archiver?\')" href=""><i class="bi bi-archive-fill text-dark"></i></a>
                                     <a href=""></a>
                                     </span>
@@ -105,7 +105,9 @@
 
                     </tbody>
                 </table>
-
+                 <div class="d-flex justify-content-center">
+                    {{ $users->links() }}
+                </div>
             </div>
 
         </div>
