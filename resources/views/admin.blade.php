@@ -51,7 +51,6 @@
                             <button class="btn btn-outline-secondary" type="submit">Recherche</button>
                         </form>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <a href="connexion.php" class="mt-1"><i class="bi bi-box-arrow-right text-white "
                             style="font-size:40px;"></i></a>
