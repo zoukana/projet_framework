@@ -17,10 +17,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //$user = assane::all();
+        //$users = assane::all();
 
         /*return response ()->json($user);*/
-        $users = assane::paginate(3);
+        $users = assane::paginate(5);
         //dd($user->links());
        return view('admin',['users' => $users]);
         //return view('admin',['user' => $user]);
@@ -29,8 +29,8 @@ class PostController extends Controller
     // app > http > controllers > EmployeeController.php
 
     public function getData(){
-      //$user = assane::paginate(3);
-      //return view('admin',compact(['user' => $user]));
+      //$user = assane::paginate(5);
+      //return view('admin',['users' => $users])
     }
 
 
@@ -91,8 +91,8 @@ class PostController extends Controller
 
         $user = assane::findOrFail($id);
         $user->nom=$request->get("nom");
-        $user->nom=$request->get("nom");
-        $user->nom=$request->get("nom");
+        $user->prenom=$request->get("prenom");
+        $user->email=$request->get("email");
         $user->save();
         return redirect("/api/post");
     }
@@ -123,5 +123,12 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function chercheUser(Request $request)
+    {
+        $users = assane::where('prenom', $request->get('prenom'))->get();
+        
+        return view("admin" ,["users"=>$users]);
     }
 }

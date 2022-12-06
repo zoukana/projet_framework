@@ -53,7 +53,7 @@
                </div>
                 <div class="form-group">
                   <label for="email">E-mail</label><br>
-                  <input type="text" id="email" name="email"placeholder="exemple@gmail.com" class="form-control" value="{{{$user->prenom}}}">
+                  <input type="text" id="email" name="email"placeholder="exemple@gmail.com" class="form-control" value="{{{$user->email}}}">
                   <div id="erreur2"></div>
                 </div>
                 <button type="submit" name="S'Inscrire" class="btn btn-secondary btn-lg bit Sinscrire">Modifier</button>
